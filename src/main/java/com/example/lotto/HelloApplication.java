@@ -1,6 +1,7 @@
 package com.example.lotto;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -14,6 +15,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Lotto");
         stage.setScene(scene);
+        stage.setOnCloseRequest(windowEvent -> Platform.exit());
         stage.show();
     }
 
